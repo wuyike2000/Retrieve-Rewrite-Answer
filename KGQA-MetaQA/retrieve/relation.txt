@@ -1,0 +1,9 @@
+release_year
+written_by_reverse
+directed_by_reverse
+in_language
+starred_actors
+starred_actors_reverse
+written_by
+directed_by
+has_genre
