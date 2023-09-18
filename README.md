@@ -158,7 +158,7 @@ You may need to modify some parameters (e.g. model_path, batch_size).
 Run the files in ```retrieve``` sequentially as described in ```Package Description``` to retrieve subgraph  
 For WQSP, you need to build freebase in virtuoso to support entity names query. You can directly use our provided retrieved result to skip this step.
 #### Rewrite
-Run ```infer_llama.py```, ```infer_t5-xl.py``` and ```infer_mvp.py``` in ```rewrite``` to transform triple-form text into free-form text based on different models.  
+Run ```infer_llama.py```, ```infer_t5-xl.py``` and ```infer_mvp.py``` in ```rewrite``` to transform triple-form text into free-form text based on different LLMs.  
 You may need to modify the path for the model or output file.
 #### Answer
 Run the files in ```answer``` to answer the questions. For detailed usage, please refer to ```Package Description```. You may need to modify the path for the model, input file or output file.
