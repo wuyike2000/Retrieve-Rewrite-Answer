@@ -125,38 +125,41 @@ Retrieve-Rewrite-Answer/main/
 
 ## Resources
 ### Processed data
-Download indexes for WQSP to folders ```corpus_generation/WQSP```: 
-We provide the processed dataset. 
-Download processed data to ```corpus_generation/MetaQA``` and rename it to "processed_data": https://pan.baidu.com/s/1B7RA8uFx972TTuwj79hu7g?pwd=pv2v 
-Download processed data to ```corpus_generation/WQSP``` and rename it to "processed_data": https://pan.baidu.com/s/1Dp0pSy-AdEhrb6bqJOQLRQ?pwd=iaqv 
-Download processed data to ```corpus_generation/ZJQA``` and rename it to "processed_data": https://pan.baidu.com/s/1TBIU3kVUGsuYQ2D7wXsjRw?pwd=77n3 
-We provide the retrieved result for WQSP. Download retrieved result to ```KGQA-WQSP/retrieve/path_prediction```: https://pan.baidu.com/s/1vORsf1X6RhgkXjXO1vTfjw?pwd=21vd
+Download indexes for WQSP to ```corpus_generation/WQSP```: https://pan.baidu.com/s/19qDw3wfYq7nUf3MWjOln8g?pwd=l94c  
+We provide the processed dataset.  
+Download processed data to ```corpus_generation/MetaQA``` and rename it to "processed_data": https://pan.baidu.com/s/1B7RA8uFx972TTuwj79hu7g?pwd=pv2v  
+Download processed data to ```corpus_generation/WQSP``` and rename it to "processed_data": https://pan.baidu.com/s/1Dp0pSy-AdEhrb6bqJOQLRQ?pwd=iaqv   
+Download processed data to ```corpus_generation/ZJQA``` and rename it to "processed_data": https://pan.baidu.com/s/1TBIU3kVUGsuYQ2D7wXsjRw?pwd=77n3   
+We provide the retrieved result for WQSP. Download retrieved result to ```KGQA-WQSP/retrieve/path_prediction```: https://pan.baidu.com/s/1vORsf1X6RhgkXjXO1vTfjw?pwd=21vd  
 ### LoRA checkpoint for KG-to-Text
-Download llama LoRA checkpoint for KG-to-Text to ```finetune-llama```: https://pan.baidu.com/s/1IdV7Fs4o12zwnjK49x1CcQ?pwd=ylwq 
-Download flan-t5-xl LoRA checkpoint for KG-to-Text to ```finetune-llama```: 
+Download llama LoRA checkpoint for KG-to-Text to ```finetune-llama```: https://pan.baidu.com/s/1IdV7Fs4o12zwnjK49x1CcQ?pwd=ylwq  
+Download flan-t5-xl LoRA checkpoint for KG-to-Text to ```finetune-llama```:   
 ### LLM
-Download LLMs to ```pretrain```: [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Chinese-Alpaca-2-7B](https://huggingface.co/ziqingyang/chinese-alpaca-2-7b), [Chinese-Alpaca-2-13B](https://huggingface.co/ziqingyang/chinese-alpaca-2-13b), [Flan-T5-small](https://huggingface.co/google/flan-t5-small), [Flan-T5-xl](https://huggingface.co/google/flan-t5-xl), [Flan-T5-xxl](https://huggingface.co/google/flan-t5-xxl), [T5-large-lm-adapt](https://huggingface.co/google/t5-large-lm-adapt), [T5-xl-lm-adapt](https://huggingface.co/google/t5-xl-lm-adapt), [T5-xxl-lm-adapt](https://huggingface.co/google/t5-xxl-lm-adapt), [T0](https://huggingface.co/bigscience/T0), [T0-3B](https://huggingface.co/bigscience/T0_3B), [bert-base-uncased](https://huggingface.co/bert-base-uncased), [https://huggingface.co/bert-base-chinese](https://huggingface.co/bert-base-chinese)
+Download LLMs to ```pretrain```: [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Chinese-Alpaca-2-7B](https://huggingface.co/ziqingyang/chinese-alpaca-2-7b), [Chinese-Alpaca-2-13B](https://huggingface.co/ziqingyang/chinese-alpaca-2-13b), [Flan-T5-small](https://huggingface.co/google/flan-t5-small), [Flan-T5-xl](https://huggingface.co/google/flan-t5-xl), [Flan-T5-xxl](https://huggingface.co/google/flan-t5-xxl), [T5-large-lm-adapt](https://huggingface.co/google/t5-large-lm-adapt), [T5-xl-lm-adapt](https://huggingface.co/google/t5-xl-lm-adapt), [T5-xxl-lm-adapt](https://huggingface.co/google/t5-xxl-lm-adapt), [T0](https://huggingface.co/bigscience/T0), [T0-3B](https://huggingface.co/bigscience/T0_3B), [bert-base-uncased](https://huggingface.co/bert-base-uncased), [bert-base-chinese](https://huggingface.co/bert-base-chinese)
 
 ## Usage
 ### Corpus Generation
-We provide our generated KG-to-Text corpus in ```corpus_generation/MetaQA/KG-to-Text/data```, ```corpus_generation/WQSP/KG-to-Text/data``` and ```corpus_generation/ZJQA/KG-to-Text/data```. We also provide these corpus in Stanford Alpaca format for direct finetuning in ```finetune-llama/MetaQA```, ```finetune-llama/WQSP```, ```finetune-llama/ZJQA```, ```finetune-t5/data```.
-If you want to generate your KG-to-Text corpus, please follow these steps and be ready to spend a lot of money ;)
-1. Run the files in ```process``` sequentially as described in ```Package Description``` to process the QA data 
-For WQSP, you need to build freebase in virtuoso to support entity names query. You can directly use our provided processed data to skip this step.
-2. Run the files in ```KG-to-Text``` sequentially as described in ```Package Description``` to generate the KG-to-Text corpus and transform it into Stanford Alpaca format
+We provide our generated KG-to-Text corpus in ```corpus_generation/MetaQA/KG-to-Text/data```, ```corpus_generation/WQSP/KG-to-Text/data``` and ```corpus_generation/ZJQA/KG-to-Text/data```. We also provide these corpus in Stanford Alpaca format for direct finetuning in ```finetune-llama/MetaQA```, ```finetune-llama/WQSP```, ```finetune-llama/ZJQA```, ```finetune-t5/data```.  
+If you want to generate your KG-to-Text corpus, please follow these steps and be ready to spend a lot of money ;)  
+1. Run the files in ```process``` sequentially as described in ```Package Description``` to process the QA data  
+For WQSP, you need to build freebase in virtuoso to support entity names query. You can directly use our provided processed data to skip this step.  
+2. Run the files in ```KG-to-Text``` sequentially as described in ```Package Description``` to generate the KG-to-Text corpus and transform it into Stanford Alpaca format  
 
 ### LLM finetuning
 #### Llama finetuning
-Run the correct shell for finetuning Llama in ```finetune-llama```. Please note you should choose different shells for finetuning different size and language Llama. You may need to modify some parameters (e.g. pretrained_model, batch_size).
+Run the correct shell for finetuning Llama in ```finetune-llama```.  
+Please note you should choose different shells for finetuning different size and language Llama. You may need to modify some parameters (e.g. pretrained_model, batch_size).
 #### Flan-T5 finetuning
-Run ```train.py``` in ```finetune-t5```. You may need to modify some parameters (e.g. model_path, batch_size).
+Run ```train.py``` in ```finetune-t5```.  
+You may need to modify some parameters (e.g. model_path, batch_size).
 
 ### KGQA
 #### Retrieve
-Run the files in ```retrieve``` sequentially as described in ```Package Description``` to retrieve subgraph
+Run the files in ```retrieve``` sequentially as described in ```Package Description``` to retrieve subgraph  
 For WQSP, you need to build freebase in virtuoso to support entity names query. You can directly use our provided retrieved result to skip this step.
 #### Rewrite
-Run ```infer_llama.py```, ```infer_t5-xl.py``` and ```infer_mvp.py``` in ```rewrite``` to transform triple-form text into free-form text based on different models. You may need to modify the path for the model or output file.
+Run ```infer_llama.py```, ```infer_t5-xl.py``` and ```infer_mvp.py``` in ```rewrite``` to transform triple-form text into free-form text based on different models.  
+You may need to modify the path for the model or output file.
 #### Answer
 Run the files in ```answer``` to answer the questions. For detailed usage, please refer to ```Package Description```. You may need to modify the path for the model, input file or output file.
 
