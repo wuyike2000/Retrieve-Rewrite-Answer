@@ -133,7 +133,7 @@ Download processed data to ```corpus_generation/ZJQA``` and rename it to "proces
 We provide the retrieved result for WQSP. Download retrieved result to ```KGQA-WQSP/retrieve/path_prediction```: https://pan.baidu.com/s/1vORsf1X6RhgkXjXO1vTfjw?pwd=21vd  
 ### LoRA checkpoint for KG-to-Text
 Download llama LoRA checkpoint for KG-to-Text to ```finetune-llama```: https://pan.baidu.com/s/1IdV7Fs4o12zwnjK49x1CcQ?pwd=ylwq  
-Download flan-t5-xl LoRA checkpoint for KG-to-Text to ```finetune-llama```:   
+Download Flan-T5-xl LoRA checkpoint for KG-to-Text to ```finetune-flan-t5-xl```: https://pan.baidu.com/s/1Ou1G2RwNK-bQ_k8EYMgX2w?pwd=z2sz
 ### LLM
 Download LLMs to ```pretrain```: [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), [Llama-2-13b-chat](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf), [Chinese-Alpaca-2-7B](https://huggingface.co/ziqingyang/chinese-alpaca-2-7b), [Chinese-Alpaca-2-13B](https://huggingface.co/ziqingyang/chinese-alpaca-2-13b), [Flan-T5-small](https://huggingface.co/google/flan-t5-small), [Flan-T5-xl](https://huggingface.co/google/flan-t5-xl), [Flan-T5-xxl](https://huggingface.co/google/flan-t5-xxl), [T5-large-lm-adapt](https://huggingface.co/google/t5-large-lm-adapt), [T5-xl-lm-adapt](https://huggingface.co/google/t5-xl-lm-adapt), [T5-xxl-lm-adapt](https://huggingface.co/google/t5-xxl-lm-adapt), [T0](https://huggingface.co/bigscience/T0), [T0-3B](https://huggingface.co/bigscience/T0_3B), [bert-base-uncased](https://huggingface.co/bert-base-uncased), [bert-base-chinese](https://huggingface.co/bert-base-chinese)
 
