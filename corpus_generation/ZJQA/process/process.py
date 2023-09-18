@@ -23,7 +23,7 @@ with open('../indexes/triple.txt','r',encoding='utf-8') as f:
 pickle.dump(headdict,open('../indexes/headdict.pkl','wb'))
 pickle.dump(taildict,open('../indexes/taildict.pkl','wb'))
 
-for split in ['train.txt','valid.txt','test.txt']:
+for split in ['train.txt','valid.txt']:
     f1=open('../processed_data/'+split,'w',encoding='utf-8')
     with open('../data/'+split,'r',encoding='utf-8') as f:
         for line in f.readlines():
