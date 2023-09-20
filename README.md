@@ -131,6 +131,7 @@ Download processed data to ```corpus_generation/MetaQA``` and rename it to "proc
 Download processed data to ```corpus_generation/WQSP``` and rename it to "processed_data": https://pan.baidu.com/s/1Dp0pSy-AdEhrb6bqJOQLRQ?pwd=iaqv   
 Download processed data to ```corpus_generation/ZJQA``` and rename it to "processed_data": https://pan.baidu.com/s/1TBIU3kVUGsuYQ2D7wXsjRw?pwd=77n3   
 We provide the retrieved result for WQSP. Download retrieved result to ```KGQA-WQSP/retrieve/path_prediction```: https://pan.baidu.com/s/1vORsf1X6RhgkXjXO1vTfjw?pwd=21vd  
+The KGQA dataset for ZJQA is in ```corpus_generation/ZJQA/data``` and corresponding KG is in ```corpus_generation/ZJQA/indexes```  
 ### LoRA checkpoint for KG-to-Text
 Download llama LoRA checkpoint for KG-to-Text to ```finetune-llama```: https://pan.baidu.com/s/1IdV7Fs4o12zwnjK49x1CcQ?pwd=ylwq  
 Download Flan-T5-xl LoRA checkpoint for KG-to-Text to ```finetune-flan-t5-xl```: https://pan.baidu.com/s/1Ou1G2RwNK-bQ_k8EYMgX2w?pwd=z2sz
