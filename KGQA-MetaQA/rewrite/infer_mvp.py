@@ -1,16 +1,26 @@
 import os
 from tqdm import tqdm
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-from transformers import MvpTokenizer, MvpForConditionalGeneration
+from transformers import MvpTokenizer, MvpForConditionalGeneration,GenerationConfig
+
+generation_config = GenerationConfig(
+    temperature=0.001,
+    top_k=40,
+    top_p=0.9,
+    do_sample=True,
+    num_beams=1,
+    repetition_penalty=1.1,
+    max_new_tokens=400
+)
+
 
 template='Describe the following data: {graph}'
 
-model="../../pretrain/mvp-data-to-text"
-data='../retrieve/result/test.txt'  
-output='output/mvp.txt'
+data='../retrieve_hop/result/test.txt'  
+output='output/test.txt'
 
-tokenizer = MvpTokenizer.from_pretrained(model)
-model = MvpForConditionalGeneration.from_pretrained(model).cuda()
+tokenizer = MvpTokenizer.from_pretrained("../../pretrain/mtl-data-to-text")
+model = MvpForConditionalGeneration.from_pretrained("../../pretrain/mtl-data-to-text").cuda()
 
 f1=open(output,'w',encoding='utf-8')
 with open(data,'r',encoding='utf-8') as f:
@@ -26,8 +36,9 @@ with open(data,'r',encoding='utf-8') as f:
             i=i.replace(',',' |').replace(') (',' [SEP] ').replace('(','').replace(')','')
             prompt=template.format(graph=i)
             inputs.append(prompt)
+        print(inputs)
         prompt=tokenizer(inputs, return_tensors="pt", padding=True).to('cuda')
-        text = model.generate(**prompt,max_length=512)
+        text = model.generate(**prompt,generation_config = generation_config)
         text=tokenizer.batch_decode(text,skip_special_tokens=True)
         f1.write('{}\t{}\t{}\t{}\n'.format(ques,ans,'|'.join(text),graph1))
 f1.close()
