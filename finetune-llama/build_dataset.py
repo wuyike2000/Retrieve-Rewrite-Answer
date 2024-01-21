@@ -31,13 +31,13 @@ def build_instruction_dataset(data_path: Union[List[str],str],
                 instruction = instruction+'\n'+input
             source = prompt.format_map({'instruction':instruction})
             target = f"{output}{tokenizer.eos_token}"
-
+    
             sources.append(source)
             targets.append(target)
-
+    
         tokenized_sources = tokenizer(sources,return_attention_mask=False)
         tokenized_targets = tokenizer(targets,return_attention_mask=False,add_special_tokens=False)
-
+    
         all_input_ids = []
         all_labels = []
         for s,t in zip(tokenized_sources['input_ids'],tokenized_targets['input_ids']):
@@ -46,29 +46,25 @@ def build_instruction_dataset(data_path: Union[List[str],str],
             assert len(input_ids) == len(labels)
             all_input_ids.append(input_ids)
             all_labels.append(labels)
-
+    
         results = {'input_ids':all_input_ids, 'labels': all_labels}
         return results
-
-
+    
+    
     logging.warning("building dataset...")
     all_datasets = []
-
+    
     if not isinstance(data_path,(list,tuple)):
         data_path = [data_path]
     for file in data_path:
-
+    
         if data_cache_dir is None:
             data_cache_dir = str(os.path.dirname(file))
         cache_path = os.path.join(data_cache_dir,os.path.basename(file).split('.')[0])
         os.makedirs(cache_path, exist_ok=True)
-        try:
-            processed_dataset = datasets.load_from_disk(cache_path)
-            logger.info(f'training datasets-{file} has been loaded from disk')
-        except Exception:
-            raw_dataset = load_dataset("json", data_files=file, cache_dir=cache_path)
-            tokenization_func = tokenization
-            tokenized_dataset = raw_dataset.map(
+        raw_dataset = load_dataset("json", data_files=file, cache_dir=cache_path)
+        tokenization_func = tokenization
+        tokenized_dataset = raw_dataset.map(
                 tokenization_func,
                 batched=True,
                 num_proc=preprocessing_num_workers,
@@ -76,8 +72,7 @@ def build_instruction_dataset(data_path: Union[List[str],str],
                 keep_in_memory=False,
                 desc="preprocessing on dataset",
             )
-            processed_dataset = tokenized_dataset
-            processed_dataset.save_to_disk(cache_path)
+        processed_dataset = tokenized_dataset
         processed_dataset.set_format('torch')
         all_datasets.append(processed_dataset['train'])
     all_datasets = concatenate_datasets(all_datasets)
