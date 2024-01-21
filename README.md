@@ -11,7 +11,7 @@ UPDATE: the paper has been accepted by the 12th International Joint Conference o
 Please install the following dependency libraries.
 - accelerate == 0.21.0
 - bitsandbytes == 0.39.0
-- datasets == 2.14.2
+- datasets == 2.16.1
 - deepspeed == 0.10.0
 - langchain == 0.0.247
 - numpy == 1.24.4
