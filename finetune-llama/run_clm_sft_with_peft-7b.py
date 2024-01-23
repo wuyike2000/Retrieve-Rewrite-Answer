@@ -333,6 +333,7 @@ def main():
             torch_dtype=torch_dtype,
             low_cpu_mem_usage=True
         )
+        model.enable_input_require_grads()
     else:
         model = AutoModelForCausalLM.from_config(config)
         n_params = sum({p.data_ptr(): p.numel() for p in model.parameters()}.values())
