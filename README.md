@@ -3,7 +3,7 @@
 > **Abstract**
 Despite their competitive performance on knowledge-intensive tasks, large language models (LLMs) still have limitations in memorizing all world knowledge especially long tail knowledge. In this paper, we study the KG-augmented language model approach for solving the knowledge graph question answering (KGQA) task that requires rich world knowledge. Existing work has shown that retrieving KG knowledge to enhance LLMs prompting can significantly improve LLMs performance in KGQA. However, their approaches lack a well-formed verbalization of KG knowledge, i.e., they ignore the gap between KG representations and textual representations. To this end, we propose an answer-sensitive KG-to-Text approach that can transform KG knowledge into well-textualized statements most informative for KGQA. Based on this approach, we propose a KG-to-Text enhanced LLMs framework for solving the KGQA task. Experiments on several KGQA benchmarks show that the proposed KG-to-Text augmented LLMs approach outperforms previous KG-augmented LLMs approaches regarding answer accuracy and usefulness of knowledge statements.
 
-This is the accompanying code & benchmarks for the paper "[Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering](http://arxiv.org/abs/2309.11206)".  
+This is the accompanying code & benchmarks for the paper "[Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering](https://ijckg2023.knowledge-graph.jp/pages/proc/paper_30.pdf)".  
 
 UPDATE: the paper has been accepted by the 12th International Joint Conference on Knowledge Graphs (IJCKG 2023).  
 
@@ -168,3 +168,13 @@ Run the files in ```answer``` to answer the questions. For detailed usage, pleas
 
 ## Contact
 Please consider creating a new issue. We will respond to your questions within a few days.
+
+## BibTex
+If you find this work is helpful for your research, please cite:
+```
+@article{wu2023retrieve,
+  title={Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering},
+  author={Wu, Yike and Hu, Nan and Bi, Sheng and Qi, Guilin and Ren, Jie and Xie, Anhuan and Song, Wei},
+  year={2023}
+}
+```
