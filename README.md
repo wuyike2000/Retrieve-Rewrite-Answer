@@ -5,7 +5,7 @@ Despite their competitive performance on knowledge-intensive tasks, large langua
 
 This is the accompanying code & benchmarks for the paper "[Retrieve-Rewrite-Answer: A KG-to-Text Enhanced LLMs Framework for Knowledge Graph Question Answering](https://ijckg2023.knowledge-graph.jp/pages/proc/paper_30.pdf)".  
 
-UPDATE: the paper has been accepted by the 12th International Joint Conference on Knowledge Graphs (IJCKG 2023).  
+UPDATE: the paper has been accepted by **The 12th International Joint Conference on Knowledge Graphs (IJCKG 2023)**.  
 
 ## Requirements
 Please install the following dependency libraries.
